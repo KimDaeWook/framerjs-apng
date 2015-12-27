@@ -1,49 +1,22 @@
-# FramerJS-APNG
+The MIT License (MIT)
 
-The framerjs-apng is APNG(Animated Portable Network Graphics) support module for framerJS.
-It's based on [apng-canvas](https://github.com/davidmz/apng-canvas)
+Copyright (c) 2015 DaeWook, Kim
 
-## How to install
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-1. Download "apng.coffee" file to modules directory in your project.
-2. Just type **require "apng"** on first line.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-## How to use
-The default usage is the same as the FramerJS Layer except few properties. 
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
-1. Create layer any size.
-2. set **apngImage** property. 
-3. call **playAPNG** method.
-
-### Completely Example
-```coffescript
-require "apng"
-
-apngLayer = new Layer
-	width: 400
-	height: 400
-	backgroundColor: "#FFFFFF"
-	apngImage: "images/clock.png"
-apngLayer.center();
-
-# Listen to the loading event 
-apngLayer.on Events.ImageLoaded, ->
-    print "The image loaded"
- 
-apngLayer.on Events.ImageLoadError, (err)->
-    print "The image couldn't be loaded"
-
-# Play APNG Image
-apngLayer.playAPNG();
-# or Stop
-# apngLayer.stopAPNG()
-```
-
-
-### API
-
-#### Layer.playAPNG()
-play APNG image animation.(If images are being downloaded, play after download.) 
-
-#### Layer.stopAPNG()
-stop APNG image animation.
