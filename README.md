@@ -20,18 +20,18 @@ The default usage is the same as the FramerJS Layer except few properties.
 require "apng"
 
 apngLayer = new Layer
-width: 400
-height: 400
-backgroundColor: "#FFFFFF"
-apngImage: "images/clock.png"
+	width: 400
+	height: 400
+	backgroundColor: "#FFFFFF"
+	apngImage: "images/clock.png"
 apngLayer.center();
 
 # Listen to the loading event 
 apngLayer.on Events.ImageLoaded, ->
-print "The image loaded"
-
+    print "The image loaded"
+ 
 apngLayer.on Events.ImageLoadError, (err)->
-print "The image couldn't be loaded"
+    print "The image couldn't be loaded"
 
 # Play APNG Image
 apngLayer.playAPNG();
